@@ -3,6 +3,7 @@ package com.example.loginusinginstagram;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
 import com.example.loginusinginstagram.data.model.InstagramUser;
@@ -11,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
   String clientId = "9e1800a37cca47708ecfe0fc3106bb05";
   String clientSecret = "f02d4c1509b64b3e8bffe3957a8227ed";
   String redirectURL = "http://appsinnovate.com/";
-
+  InstagramUser instagramUser;
   ImageView ivInstagram;
 
   @Override
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     ivInstagram = findViewById(R.id.iv_instagram_sign_in);
-
+    instagramUser = new InstagramUser();
 
     findViewById(R.id.iv_instagram_sign_in).setOnClickListener(v -> {
       Instagram.signIn(MainActivity.this, clientId, clientSecret, redirectURL);
@@ -34,10 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     if (requestCode == Instagram.REQ_CODE_SIGN_IN) {
       if (resultCode == Instagram.SUCCESS) {
-        InstagramUser instagramUser = data.getParcelableExtra(Instagram.USER);
-
-        Toast.makeText(MainActivity.this, instagramUser.getUser().getFull_name(), Toast.LENGTH_SHORT).show();
-
+        instagramUser = data.getParcelableExtra(Instagram.USER);
       } else if (resultCode == Instagram.FAILURE) {
 
         int errorType = data.getIntExtra(Instagram.ERROR_TYPE, 0);
