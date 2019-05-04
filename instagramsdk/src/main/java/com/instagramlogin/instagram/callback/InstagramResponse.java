@@ -1,6 +1,6 @@
-package com.mina_mikhail.instagram.callback;
+package com.instagramlogin.instagram.callback;
 
-import com.mina_mikhail.instagram.data.model.InstagramUser;
+import com.instagramlogin.instagram.data.model.InstagramUser;
 
 public interface InstagramResponse {
 

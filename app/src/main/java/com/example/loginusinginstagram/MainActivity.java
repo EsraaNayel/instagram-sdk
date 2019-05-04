@@ -6,9 +6,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.mina_mikhail.instagram.InstagramSDK;
-import com.mina_mikhail.instagram.callback.InstagramResponse;
-import com.mina_mikhail.instagram.data.model.InstagramUser;
+import com.instagramlogin.instagram.InstagramSDK;
+import com.instagramlogin.instagram.callback.InstagramResponse;
+import com.instagramlogin.instagram.data.model.InstagramUser;
 import com.squareup.picasso.Picasso;
 
 /*

@@ -1,10 +1,7 @@
-package com.mina_mikhail.instagram.data.model;
+package com.instagramlogin.instagram.data.model;
 
-/*
- * *
- *  * Created by Mina Mikhail on 05/05/2019
- *  * Copyright (c) 2019 . All rights reserved.
- * *
+/**
+ * Created by Esraa Nayel on 5/4/2019.
  */
 
 public class InstagramUser {

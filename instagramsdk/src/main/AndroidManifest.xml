@@ -1,7 +1,7 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.mina_mikhail.instagram">
+    package="com.instagramlogin.instagram">
 
   <uses-permission android:name="android.permission.INTERNET"/>
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -12,7 +12,7 @@
       >
 
     <activity
-        android:name=".ui.InstagramLogInActivity"
+        android:name="com.instagramlogin.instagram.ui.InstagramLogInActivity"
         android:theme="@style/LibraryTheme.NoActionBar"
         android:configChanges="orientation|screenSize"
         android:windowSoftInputMode="adjustResize"/>

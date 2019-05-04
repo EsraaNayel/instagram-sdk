@@ -1,4 +1,4 @@
-package com.mina_mikhail.instagram.ui;
+package com.instagramlogin.instagram.ui;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -24,39 +24,36 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.Circle;
-import com.mina_mikhail.instagram.InstagramSDK;
-import com.mina_mikhail.instagram.R;
-import com.mina_mikhail.instagram.callback.InstagramResponse;
-import com.mina_mikhail.instagram.data.enums.ErrorCode;
-import com.mina_mikhail.instagram.data.model.InstagramUser;
-import com.mina_mikhail.instagram.data.network.ApiClient;
-import com.mina_mikhail.instagram.data.network.response.AccessTokenResponse;
-import com.mina_mikhail.instagram.databinding.ActivityInstagramLogInBinding;
-import com.mina_mikhail.instagram.utils.Constants;
-import com.mina_mikhail.instagram.utils.NetworkUtils;
+import com.instagramlogin.instagram.InstagramSDK;
+import com.instagramlogin.instagram.R;
+import com.instagramlogin.instagram.callback.InstagramResponse;
+import com.instagramlogin.instagram.data.enums.ErrorCode;
+import com.instagramlogin.instagram.data.model.InstagramUser;
+import com.instagramlogin.instagram.data.network.ApiClient;
+import com.instagramlogin.instagram.data.network.response.AccessTokenResponse;
+import com.instagramlogin.instagram.databinding.ActivityInstagramLogInBinding;
+import com.instagramlogin.instagram.utils.Constants;
+import com.instagramlogin.instagram.utils.NetworkUtils;
 import com.uber.autodispose.ScopeProvider;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.observers.DisposableSingleObserver;
 import io.reactivex.schedulers.Schedulers;
 
-import static com.mina_mikhail.instagram.data.enums.ErrorCode.ERROR_NO_INTERNET;
-import static com.mina_mikhail.instagram.data.enums.ErrorCode.ERROR_OTHER;
-import static com.mina_mikhail.instagram.data.enums.ErrorCode.ERROR_USER_CANCELLED;
-import static com.mina_mikhail.instagram.data.enums.ErrorCode.ERROR_USER_CANCELLED_MSG;
-import static com.mina_mikhail.instagram.data.enums.QueryParameter.AuthorizationUrlParameters.CLIENT_ID;
-import static com.mina_mikhail.instagram.data.enums.QueryParameter.AuthorizationUrlParameters.REDIRECT_URI;
-import static com.mina_mikhail.instagram.data.enums.QueryParameter.AuthorizationUrlParameters.RESPONSE_TYPE;
-import static com.mina_mikhail.instagram.data.enums.QueryParameter.CodeUrlParameters.CODE;
-import static com.mina_mikhail.instagram.utils.Constants.AUTHORIZATION_URL;
-import static com.mina_mikhail.instagram.utils.WebViewUtils.clearCookies;
+import static com.instagramlogin.instagram.data.enums.ErrorCode.ERROR_NO_INTERNET;
+import static com.instagramlogin.instagram.data.enums.ErrorCode.ERROR_OTHER;
+import static com.instagramlogin.instagram.data.enums.ErrorCode.ERROR_USER_CANCELLED;
+import static com.instagramlogin.instagram.data.enums.ErrorCode.ERROR_USER_CANCELLED_MSG;
+import static com.instagramlogin.instagram.data.enums.QueryParameter.AuthorizationUrlParameters.CLIENT_ID;
+import static com.instagramlogin.instagram.data.enums.QueryParameter.AuthorizationUrlParameters.REDIRECT_URI;
+import static com.instagramlogin.instagram.data.enums.QueryParameter.AuthorizationUrlParameters.RESPONSE_TYPE;
+import static com.instagramlogin.instagram.data.enums.QueryParameter.CodeUrlParameters.CODE;
+import static com.instagramlogin.instagram.utils.Constants.AUTHORIZATION_URL;
+import static com.instagramlogin.instagram.utils.WebViewUtils.clearCookies;
 import static com.uber.autodispose.AutoDispose.autoDisposable;
 
-/*
- * *
- *  * Created by Mina Mikhail on 05/05/2019
- *  * Copyright (c) 2019 . All rights reserved.
- * *
+/**
+ * Created by Esraa Nayel on 5/4/2019.
  */
 
 public class InstagramLogInActivity

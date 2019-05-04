@@ -1,4 +1,4 @@
-package com.mina_mikhail.instagram.data.network;
+package com.instagramlogin.instagram.data.network;
 
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.google.gson.GsonBuilder;
@@ -8,13 +8,10 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.mina_mikhail.instagram.utils.Constants.AUTHORIZATION_URL;
+import static com.instagramlogin.instagram.utils.Constants.AUTHORIZATION_URL;
 
-/*
- * *
- *  * Created by Mina Mikhail on 05/05/2019
- *  * Copyright (c) 2019 . All rights reserved.
- * *
+/**
+ * Created by Esraa Nayel on 5/4/2019.
  */
 
 public class ApiClient {

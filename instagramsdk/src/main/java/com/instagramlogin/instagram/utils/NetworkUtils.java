@@ -1,14 +1,11 @@
-package com.mina_mikhail.instagram.utils;
+package com.instagramlogin.instagram.utils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-/*
- * *
- *  * Created by Mina Mikhail on 05/05/2019
- *  * Copyright (c) 2019 . All rights reserved.
- * *
+/**
+ * Created by Esraa Nayel on 5/4/2019.
  */
 
 public final class NetworkUtils {

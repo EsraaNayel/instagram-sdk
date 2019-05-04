@@ -1,16 +1,13 @@
-package com.mina_mikhail.instagram;
+package com.instagramlogin.instagram;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.annotation.NonNull;
-import com.mina_mikhail.instagram.callback.InstagramResponse;
-import com.mina_mikhail.instagram.ui.InstagramLogInActivity;
+import com.instagramlogin.instagram.callback.InstagramResponse;
+import com.instagramlogin.instagram.ui.InstagramLogInActivity;
 
-/*
- * *
- *  * Created by Mina Mikhail on 05/05/2019
- *  * Copyright (c) 2019 . All rights reserved.
- * *
+/**
+ * Created by Esraa Nayel on 5/4/2019.
  */
 
 public class InstagramSDK {

@@ -1,18 +1,15 @@
-package com.mina_mikhail.instagram.data.network;
+package com.instagramlogin.instagram.data.network;
 
-import com.mina_mikhail.instagram.data.network.response.AccessTokenResponse;
+import com.instagramlogin.instagram.data.network.response.AccessTokenResponse;
 import io.reactivex.Single;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
-import static com.mina_mikhail.instagram.utils.Constants.GET_TOKEN_URL;
+import static com.instagramlogin.instagram.utils.Constants.GET_TOKEN_URL;
 
-/*
- * *
- *  * Created by Mina Mikhail on 05/05/2019
- *  * Copyright (c) 2019 . All rights reserved.
- * *
+/**
+ * Created by Esraa Nayel on 5/4/2019.
  */
 
 public interface ApiInterface {

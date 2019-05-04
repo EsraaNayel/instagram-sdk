@@ -1,12 +1,9 @@
-package com.mina_mikhail.instagram.data.network.response;
+package com.instagramlogin.instagram.data.network.response;
 
-import com.mina_mikhail.instagram.data.model.InstagramUser;
+import com.instagramlogin.instagram.data.model.InstagramUser;
 
-/*
- * *
- *  * Created by Mina Mikhail on 05/05/2019
- *  * Copyright (c) 2019 . All rights reserved.
- * *
+/**
+ * Created by Esraa Nayel on 5/4/2019.
  */
 
 public class AccessTokenResponse {
