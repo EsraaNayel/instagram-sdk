@@ -1,0 +1,22 @@
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mina_mikhail.instagram">
+
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+  <application
+      android:networkSecurityConfig="@xml/network_security_config"
+      tools:ignore="GoogleAppIndexingWarning,UnusedAttribute"
+      >
+
+    <activity
+        android:name=".ui.InstagramLogInActivity"
+        android:theme="@style/LibraryTheme.NoActionBar"
+        android:configChanges="orientation|screenSize"
+        android:windowSoftInputMode="adjustResize"/>
+
+  </application>
+
+</manifest>

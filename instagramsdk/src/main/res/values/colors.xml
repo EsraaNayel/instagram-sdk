@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="libPrimaryColor">#5851db</color>
+  <color name="libPrimaryDarkColor">#405de6</color>
+  <color name="libAccentColor">#e1306c</color>
+</resources>

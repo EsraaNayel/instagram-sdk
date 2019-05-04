@@ -13,12 +13,15 @@ buildscript {
     rxandroid = '2.0.2'
     uber_autodispose = '1.1.0'
 
+    picasso = '2.71828'
+
     retrofit = '2.5.0'
     gson = '2.8.5'
     stetho = '1.5.0'
     interceptor = '3.9.0'
 
     parceler_api = '1.1.11'
+    loading_animations = '1.2.0'
 
     junit = '4.12'
     support_test_runner = '1.0.2'

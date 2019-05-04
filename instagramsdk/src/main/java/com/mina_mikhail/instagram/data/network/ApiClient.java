@@ -1,4 +1,4 @@
-package com.example.loginusinginstagram.data.network;
+package com.mina_mikhail.instagram.data.network;
 
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.google.gson.GsonBuilder;
@@ -7,12 +7,18 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-/**
- * Created by Esraa Nayel on 4/13/2019.
+
+import static com.mina_mikhail.instagram.utils.Constants.AUTHORIZATION_URL;
+
+/*
+ * *
+ *  * Created by Mina Mikhail on 05/05/2019
+ *  * Copyright (c) 2019 . All rights reserved.
+ * *
  */
+
 public class ApiClient {
-  private static final String BASE_URL = "https://api.instagram.com/oauth/authorize/";
-  //res/xml/network_security_config.xml
+  private static final String BASE_URL = AUTHORIZATION_URL + "/";
 
   private static ApiClient instance;
 
