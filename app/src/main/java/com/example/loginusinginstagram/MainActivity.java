@@ -1,60 +1,62 @@
 package com.example.loginusinginstagram;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
-import com.example.loginusinginstagram.data.model.InstagramUser;
+import com.mina_mikhail.instagram.InstagramSDK;
+import com.mina_mikhail.instagram.callback.InstagramResponse;
+import com.mina_mikhail.instagram.data.model.InstagramUser;
+import com.squareup.picasso.Picasso;
 
-public class MainActivity extends AppCompatActivity {
-  String clientId = "9e1800a37cca47708ecfe0fc3106bb05";
-  String clientSecret = "f02d4c1509b64b3e8bffe3957a8227ed";
-  String redirectURL = "http://appsinnovate.com/";
+/*
+ * *
+ *  * Created by Mina Mikhail on 04/05/2019
+ *  * Copyright (c) 2019 . All rights reserved.
+ * *
+ */
 
-  ImageView ivInstagram;
+public class MainActivity
+    extends AppCompatActivity
+    implements InstagramResponse {
+
+  private String clientId = "9e1800a37cca47708ecfe0fc3106bb05";
+  private String clientSecret = "f02d4c1509b64b3e8bffe3957a8227ed";
+  private String redirectURL = "http://appsinnovate.com/";
+
+  private View userData;
+  private ImageView userPhoto;
+  private TextView userID;
+  private TextView userName;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
-    ivInstagram = findViewById(R.id.iv_instagram_sign_in);
 
+    userData = findViewById(R.id.ll_user_data);
+    userPhoto = findViewById(R.id.iv_user_photo);
+    userID = findViewById(R.id.tv_user_id);
+    userName = findViewById(R.id.tv_user_name);
 
-    findViewById(R.id.iv_instagram_sign_in).setOnClickListener(v -> {
-      Instagram.signIn(MainActivity.this, clientId, clientSecret, redirectURL);
-    });
-    ivInstagram.setOnClickListener(
-        v -> Instagram.signIn(MainActivity.this, clientId, clientSecret, redirectURL));
+    findViewById(R.id.btn_log_in).setOnClickListener(
+        v -> InstagramSDK.getInstance()
+            .logIn(MainActivity.this, clientId, clientSecret, redirectURL, this));
   }
 
   @Override
-  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    super.onActivityResult(requestCode, resultCode, data);
+  public void onInstagramLogInSuccess(InstagramUser user) {
+    Picasso.get().load(user.getProfile_picture()).into(userPhoto);
+    userID.setText(user.getId());
+    userName.setText(user.getFull_name());
 
-    if (requestCode == Instagram.REQ_CODE_SIGN_IN) {
-      if (resultCode == Instagram.SUCCESS) {
-        InstagramUser instagramUser = data.getParcelableExtra(Instagram.USER);
+    userData.setVisibility(View.VISIBLE);
+  }
 
-        Toast.makeText(MainActivity.this, instagramUser.getUser().getFull_name(), Toast.LENGTH_SHORT).show();
-
-      } else if (resultCode == Instagram.FAILURE) {
-
-        int errorType = data.getIntExtra(Instagram.ERROR_TYPE, 0);
-        switch (errorType) {
-          case Instagram.ERROR_NO_INTERNET:
-            Toast.makeText(MainActivity.this, "Please check your internet connection",
-                Toast.LENGTH_SHORT).show();
-            break;
-          case Instagram.ERROR_USER_CANCELLED:
-            Toast.makeText(MainActivity.this, "User cancelled authorization", Toast.LENGTH_SHORT)
-                .show();
-            break;
-          case Instagram.ERROR_OTHER:
-            Toast.makeText(MainActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
-            break;
-        }
-      }
-    }
+  @Override
+  public void onInstagramLogInFail(int errorCode, String errorMessage) {
+    Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show();
   }
 }

@@ -1,18 +1,24 @@
-package com.example.loginusinginstagram.data.network;
+package com.mina_mikhail.instagram.data.network;
 
-import com.example.loginusinginstagram.data.network.response.AccessTokenResponse;
+import com.mina_mikhail.instagram.data.network.response.AccessTokenResponse;
 import io.reactivex.Single;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
-/**
- * Created by Esraa Nayel on 4/13/2019.
+import static com.mina_mikhail.instagram.utils.Constants.GET_TOKEN_URL;
+
+/*
+ * *
+ *  * Created by Mina Mikhail on 05/05/2019
+ *  * Copyright (c) 2019 . All rights reserved.
+ * *
  */
+
 public interface ApiInterface {
 
   @FormUrlEncoded
-  @POST("https://api.instagram.com/oauth/access_token/")
+  @POST(GET_TOKEN_URL)
   Single<AccessTokenResponse> getAccessToken(
       @Field("client_id") String client_id,
       @Field("client_secret") String client_secret,
